@@ -13,6 +13,6 @@ for k in range(N):
 	plt.plot(np.imag(s), 'g', lw=1.5)
 	plt.axis([0,N-1,-1.5,1.5])
 
-plt.tight_layout()
-plt.savefig('complex-sinewaves.png')
+# plt.tight_layout()
+# plt.savefig('complex-sinewaves.png')
 plt.show()

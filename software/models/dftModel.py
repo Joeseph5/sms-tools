@@ -80,6 +80,7 @@ def dftSynth(mX, pX, M):
 	Synthesis of a signal using the discrete Fourier transform
 	mX: magnitude spectrum, pX: phase spectrum, M: window size
 	returns y: output signal
+	ifft function actually.
 	"""
 
 	hN = mX.size                                            # size of positive spectrum, it includes sample 0

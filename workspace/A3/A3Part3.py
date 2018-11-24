@@ -48,4 +48,23 @@ def testRealEven(x):
         dftbuffer (numpy array, possibly complex) = The M point zero phase windowed version of x 
         X (numpy array, possibly complex) = The M point DFT of dftbuffer 
     """
-    ## Your code here
+    M = x.size
+    hM2 = int(math.floor(M/2))    
+
+    dftbuffer = np.zeros(M)
+
+    dftbuffer[:M-hM2] = x[hM2:]
+    dftbuffer[-hM2:] = x[:hM2]
+
+    X = fft(dftbuffer)
+    # isRealEven judge
+    if (np.imag(X).all()):
+        isRealEven = False
+    else:
+        isRealEven = True
+
+    return (isRealEven, dftbuffer, X)
+"""
+x = np.array([2, 3, 4, 3, 2 ])
+print(testRealEven(x))
+"""
